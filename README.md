@@ -19,21 +19,7 @@ Uma aplicação web interativa para amantes do cinema! Descubra, explore e avali
 
 ## 🚀 Como usar
 
-1. **Clone o repositório**:
-
-   ```zsh
-   git clone https://github.com/tjatoba/love-and-rate-movies.git
-   cd love-and-rate-movies
-   ```
-
-2. **Abra o arquivo `index.html`** em seu navegador
-
-3. **Explore os filmes**:
-
-   - Use a barra de busca para encontrar filmes por título
-   - Digite o nome de um ator para ver sua filmografia
-   - Clique nos gêneros para filtrar
-   - Use os filtros de ano e idioma para refinar sua busca
+Acesse: https://tjatoba.github.io/ 
 
 ## 🎯 Funcionalidades Detalhadas
 
