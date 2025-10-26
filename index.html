@@ -8,12 +8,33 @@
   </head>
   <body>
     <header>
-      <form id="form">
-        <input type="text" placeholder="Search" id="search" class="search" />
-      </form>
-
       <h1>Love & Rate Movies</h1>
+      <form id="form">
+        <input
+          type="text"
+          placeholder="Buscar Filme (Título)"
+          id="search"
+          class="search"
+        />
+        <input
+          type="text"
+          placeholder="Buscar por Ator"
+          id="actor-search"
+          class="search"
+        />
+        <button type="submit" class="search-btn">🔍 Buscar</button>
+      </form>
     </header>
+
+    <div class="filter-container">
+      <select id="year-filter" class="filter-select">
+        <option value="">Todos os Anos</option>
+      </select>
+      <select id="language-filter" class="filter-select">
+        <option value="">Todos os Idiomas</option>
+      </select>
+    </div>
+
     <div id="tags"></div>
     <main id="main"></main>
 
