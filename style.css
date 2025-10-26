@@ -62,6 +62,31 @@ header h1 {
   color: #fff;
 }
 
+/* Botão de busca */
+.search-btn {
+  background-color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  color: #fff;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 120px;
+}
+
+.search-btn:hover {
+  background-color: transparent;
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+.search-btn:focus {
+  outline: 0;
+  box-shadow: 0 0 0 3px rgba(147, 129, 255, 0.3);
+}
+
 /* --- NOVOS ESTILOS PARA FILTROS --- */
 .filter-container {
   display: flex;
@@ -74,24 +99,33 @@ header h1 {
 }
 
 .filter-select {
-  background-color: var(--secondary-color);
-  border: 2px solid var(--secondary-color);
-  padding: 0.5rem;
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+  padding: 0.5rem 1rem;
   border-radius: 30px;
   font-size: 0.9rem;
   color: #fff;
   font-family: inherit;
   cursor: pointer;
   min-width: 180px;
+  transition: all 0.3s ease;
 }
 
 .filter-select:focus {
   outline: none;
+  background-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(147, 129, 255, 0.3);
+}
+
+.filter-select:hover {
+  background-color: var(--primary-color);
+  transform: translateY(-1px);
 }
 
 .filter-select option {
   background-color: var(--secondary-color);
   color: #fff;
+  padding: 0.5rem;
 }
 
 /* --- ESTILOS ORIGINAIS MANTIDOS --- */
