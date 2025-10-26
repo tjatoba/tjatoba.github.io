@@ -3,25 +3,43 @@
 * {
   box-sizing: border-box;
 }
+
 :root {
   --primary-color: #9381ff;
   --secondary-color: #b8b8ff;
 }
+
 body {
   background-color: var(--primary-color);
   font-family: "Poppins", sans-serif;
   margin: 0;
 }
 
+/* --- HEADER MODIFICADO --- */
 header {
-  padding: 1rem;
+  padding: 1.5rem 1rem; /* Padding aumentado */
   display: flex;
-  justify-content: space-around;
+  flex-direction: column; /* Organiza h1 e form em coluna */
+  justify-content: center;
   align-items: center;
+  gap: 1rem; /* Espaço entre o h1 e o formulário */
   font-size: x-large;
   color: aliceblue;
   text-shadow: 0.1em 0.1em 0.2em gray;
   background-color: var(--secondary-color);
+}
+
+header h1 {
+  margin: 0;
+  order: -1; /* Garante que o H1 venha antes do form */
+}
+
+/* --- FORMULÁRIO MODIFICADO --- */
+#form {
+  display: flex;
+  flex-wrap: wrap; /* Permite que os inputs quebrem a linha */
+  justify-content: center;
+  gap: 1rem; /* Espaço entre os inputs de busca */
 }
 
 .search {
@@ -32,6 +50,7 @@ header {
   font-size: 1rem;
   color: #fff;
   font-family: inherit;
+  min-width: 220px; /* Largura mínima para os inputs */
 }
 
 .search:focus {
@@ -43,6 +62,73 @@ header {
   color: #fff;
 }
 
+/* Botão de busca */
+.search-btn {
+  background-color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  color: #fff;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 120px;
+}
+
+.search-btn:hover {
+  background-color: transparent;
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+.search-btn:focus {
+  outline: 0;
+  box-shadow: 0 0 0 3px rgba(147, 129, 255, 0.3);
+}
+
+/* --- NOVOS ESTILOS PARA FILTROS --- */
+.filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  gap: 1rem;
+  background-color: var(--primary-color); /* Fundo da cor primária */
+}
+
+.filter-select {
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  color: #fff;
+  font-family: inherit;
+  cursor: pointer;
+  min-width: 180px;
+  transition: all 0.3s ease;
+}
+
+.filter-select:focus {
+  outline: none;
+  background-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(147, 129, 255, 0.3);
+}
+
+.filter-select:hover {
+  background-color: var(--primary-color);
+  transform: translateY(-1px);
+}
+
+.filter-select option {
+  background-color: var(--secondary-color);
+  color: #fff;
+  padding: 0.5rem;
+}
+
+/* --- ESTILOS ORIGINAIS MANTIDOS --- */
 main {
   display: flex;
   flex-wrap: wrap;
@@ -54,7 +140,7 @@ main {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  width: 80%;
+  width: 90%; /* Ajustado de 80% para 90% */
   margin: 10px auto;
 }
 
@@ -67,6 +153,7 @@ main {
   display: inline-block;
   cursor: pointer;
 }
+
 .movie {
   width: 300px;
   margin: 1rem;
@@ -89,6 +176,7 @@ main {
   padding: 0.5rem 1rem 1rem;
   letter-spacing: 0.5px;
 }
+
 .movie-info h3 {
   margin-top: 0;
 }
