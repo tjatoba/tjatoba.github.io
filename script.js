@@ -57,19 +57,6 @@ const languageFilter = document.getElementById("language-filter");
 
 let selectedGenre = []; // Mantém os gêneros selecionados
 
-// Verifica se todos os elementos foram encontrados
-if (
-  !main ||
-  !form ||
-  !search ||
-  !tagsElement ||
-  !actorSearch ||
-  !yearFilter ||
-  !languageFilter
-) {
-  console.error("Erro: Alguns elementos DOM não foram encontrados!");
-}
-
 // Popula os filtros de Ano e Idioma ao carregar
 populateFilters();
 
@@ -113,7 +100,7 @@ const setGenre = () => {
       search.value = "";
       actorSearch.value = "";
 
-      // Chama a função central de busca
+      // NOVO: Chama a função central de busca
       fetchMoviesWithFilters();
       highlightSelection();
     });
@@ -231,15 +218,7 @@ languageFilter.addEventListener("change", () => {
   fetchMoviesWithFilters();
 });
 
-// Listener para Enter no campo de busca por título
-search.addEventListener("keypress", (event) => {
-  if (event.key === "Enter") {
-    event.preventDefault();
-    form.dispatchEvent(new Event("submit"));
-  }
-});
-
-// Listener para busca por ATOR (dispara ao "perder o foco" ou dar Enter)
+// NOVO: Listener para busca por ATOR (dispara ao "perder o foco" ou dar Enter)
 actorSearch.addEventListener("change", () => {
   const actorName = actorSearch.value;
 
@@ -255,20 +234,6 @@ actorSearch.addEventListener("change", () => {
   } else {
     // Se o campo de ator for limpo, volta aos filtros normais
     fetchMoviesWithFilters();
-  }
-});
-
-// Listener para Enter no campo de busca por ator
-actorSearch.addEventListener("keypress", (event) => {
-  if (event.key === "Enter") {
-    event.preventDefault();
-    const actorName = actorSearch.value;
-    if (actorName) {
-      search.value = "";
-      selectedGenre = [];
-      highlightSelection();
-      searchByActor(actorName);
-    }
   }
 });
 
